@@ -104,8 +104,8 @@ class MainActivity : Activity() {
             }
             webChromeClient = object : WebChromeClient() {
                 override fun onProgressChanged(v: WebView, p: Int) {
-                    progress.progress = p
-                    progress.visibility = if (p in 1..99) View.VISIBLE else View.INVISIBLE
+                    this@MainActivity.progress.progress = p
+                    this@MainActivity.progress.visibility = if (p in 1..99) View.VISIBLE else View.INVISIBLE
                 }
                 override fun onShowCustomView(view: View, cb: CustomViewCallback) {
                     customView = view; customCb = cb
